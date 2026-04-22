@@ -1,3 +1,4 @@
+import ColorInput from "../ColorInput/ColorInput";
 import "./Form.css";
 export default function Form({ onAddColorCard }) {
   function handleSubmit(event) {
@@ -25,7 +26,13 @@ export default function Form({ onAddColorCard }) {
           />
         </div>
         <label htmlFor="hex"> Hex</label>
-        <div className="form__field">
+        <ColorInput
+          id="hex"
+          name="hex"
+          placeholder="#GUGUGU"
+          defaultValue="#FFC5D3"
+        />
+        {/* <div className="form__field">
           <input
             id="hex"
             name="hex"
@@ -34,9 +41,15 @@ export default function Form({ onAddColorCard }) {
             required
           />
           <input id="hex" name="hex" type="color" />
-        </div>
+        </div> */}
         <label htmlFor="contrast"> Contrast text</label>
-        <div className="form__field">
+        <ColorInput
+          id="contrast"
+          name="contrastText"
+          placeholder="#GAGAGA"
+          defaultValue="#FFC5D3"
+        />
+        {/* <div className="form__field">
           <input
             id="contrast"
             name="contrastText"
@@ -45,7 +58,7 @@ export default function Form({ onAddColorCard }) {
             required
           />
           <input id="contrast" name="contrastText" type="color" />
-        </div>
+        </div> */}
         <div className="form__button-wrapper">
           <button> Add Color</button>
         </div>
