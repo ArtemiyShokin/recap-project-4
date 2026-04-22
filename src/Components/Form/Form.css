@@ -1,0 +1,38 @@
+.form {
+  gap: 24px; /* not sure if this does anything? */
+  padding-bottom: 25px; /* space between form button and the cards */
+}
+.form__fields {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.form__field {
+  display: flex;
+  flex-direction: row;
+
+  gap: 8px;
+}
+.form__button-wrapper {
+  /* display: flex;
+  justify-content: right; */
+}
+
+button {
+  font-family: monospace;
+  font-size: 50rem;
+  color: antiquewhite;
+  background-color: brown;
+  border-radius: 8px;
+  border-color: brown;
+  box-shadow: 3px 3px grey;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+button:hover {
+  color: black;
+  background-color: palevioletred;
+}
