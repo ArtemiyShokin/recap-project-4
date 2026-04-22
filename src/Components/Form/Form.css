@@ -1,11 +1,26 @@
 .form {
   gap: 24px; /* not sure if this does anything? */
-  padding-bottom: 25px; /* space between form button and the cards */
+  padding: 8px;
+  border-style: double;
+
+  border-color: var(--greyscale-dark);
+
+  background-color: var(--greyscale-main);
+
+  box-shadow: 5px 5px var(--greyscale-accent);
+  max-width: 400px;
+  margin: 10px;
+  margin-left: 0px;
 }
 .form__fields {
   display: flex;
   flex-direction: column;
   gap: 8px;
+}
+.form__fields > label {
+  background-color: var(--greyscale-dark);
+  width: 30%;
+  color: var(--greyscale-light);
 }
 .form__field {
   display: flex;
@@ -14,25 +29,27 @@
   gap: 8px;
 }
 .form__button-wrapper {
-  /* display: flex;
-  justify-content: right; */
+  display: flex;
+  justify-content: center;
 }
 
 button {
   font-family: monospace;
-  font-size: 50rem;
-  color: antiquewhite;
-  background-color: brown;
-  border-radius: 8px;
-  border-color: brown;
-  box-shadow: 3px 3px grey;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: var(--greyscale-dark);
+  background-color: var(--greyscale-light);
+  border-radius: 1px;
+  border-color: var(--greyscale-light);
+  box-shadow: 3px 3px var(--greyscale-dark);
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 20px;
   padding-right: 20px;
+  transition: 0.25s ease-in-out;
 }
 
 button:hover {
   color: black;
-  background-color: palevioletred;
+  background-color: rgb(218, 148, 171);
 }

@@ -43,7 +43,7 @@ input,
 button,
 textarea,
 select {
-  font: inherit;
+  /* font: inherit; */
 }
 /*
   7. Avoid text overflows
@@ -63,4 +63,25 @@ h6 {
 #root,
 #__next {
   isolation: isolate;
+}
+
+:root {
+  --primary-main:;
+  --primary-dark:;
+  --primary-light:;
+
+  --secondary-main:;
+  --secondary-dark:;
+  --secondary-light:;
+
+  --background-main: rgb(163, 159, 159);
+  --background-dark: rgb(109, 109, 109);
+  --background-light: rgb(228, 225, 225);
+
+  --greyscale-main: rgb(163, 159, 159);
+  --greyscale-dark: rgb(109, 109, 109);
+  --greyscale-light: rgb(228, 225, 225);
+  --greyscale-accent: rgb(218, 148, 171);
+
+  --text: var(--primary-main);
 }

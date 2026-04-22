@@ -9,6 +9,10 @@
   background: black;
   color: white; */
 /* } */
+.color-card__container {
+  width: 500px;
+  border-radius: 10px;
+}
 .color-card__list {
   list-style: none;
   margin: 0px 10px;

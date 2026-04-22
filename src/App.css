@@ -1,4 +1,13 @@
 body {
-  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-family: monospace;
   padding: 10px;
+  background-color: var(--greyscale-light);
+}
+h1 {
+  font-size: xx-large;
+  display: inline;
+  background-color: var(--greyscale-accent);
+  color: black;
+
+  padding-right: 10px;
 }
