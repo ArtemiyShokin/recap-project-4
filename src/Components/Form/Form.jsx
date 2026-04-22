@@ -1,16 +1,55 @@
-export default function Form() {
+import "./Form.css";
+export default function Form({ onAddColorCard }) {
+  function handleSubmit(event) {
+    event.preventDefault();
+    console.log("handle submit activated");
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData);
+    console.log("data: ", data);
+    onAddColorCard(data);
+    //take the data from the forms
+    //create a new array and add it as an object
+    //add it as an argument to createColorCreation in App
+  }
   return (
-    <form action="submit" className="form__container">
-      <label htmlFor="role">Role</label>
-      <input name="role" type="text" placeholder="Kukareku" />
-      <label htmlFor="hex"> Hex</label>
-      <input name="hex" type="text" placeholder="GGGGGG" />
-      <input name="hex" type="color" />
-
-      <label htmlFor="contrast"> Contrast text</label>
-      <input name="contrast" type="text" placeholder="GGGGGG" />
-      <input name="contrast" type="color" />
-      <button> Add Color</button>
+    <form onSubmit={handleSubmit} action="submit" className="form">
+      <div className="form__fields">
+        <label htmlFor="role">Role</label>
+        <div className="form__field">
+          <input
+            id="role"
+            name="role"
+            type="text"
+            placeholder="Kukareku"
+            required
+          />
+        </div>
+        <label htmlFor="hex"> Hex</label>
+        <div className="form__field">
+          <input
+            id="hex"
+            name="hex"
+            type="text"
+            placeholder="#GGGGGG"
+            required
+          />
+          <input id="hex" name="hex" type="color" />
+        </div>
+        <label htmlFor="contrast"> Contrast text</label>
+        <div className="form__field">
+          <input
+            id="contrast"
+            name="contrastText"
+            type="text"
+            placeholder="#GGGGGG"
+            required
+          />
+          <input id="contrast" name="contrastText" type="color" />
+        </div>
+        <div className="form__button-wrapper">
+          <button> Add Color</button>
+        </div>
+      </div>
     </form>
   );
 }
