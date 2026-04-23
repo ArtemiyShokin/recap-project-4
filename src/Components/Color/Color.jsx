@@ -1,6 +1,6 @@
 import "./Color.css";
 
-export default function Color({ color }) {
+export default function Color({ color, onRemoveColorCard }) {
   return (
     <div
       className="color-card__container"
@@ -16,6 +16,16 @@ export default function Color({ color }) {
           style={{ color: color.contrastText }}
         >
           contrast: {color.contrastText}{" "}
+        </li>
+        <li>
+          <button
+            onClick={() => {
+              console.log("clicked id:", color.id);
+              onRemoveColorCard(color.id);
+            }}
+          >
+            delete me
+          </button>
         </li>
       </ul>
     </div>
