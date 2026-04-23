@@ -4,9 +4,13 @@ import "./App.css";
 import Form from "./Components/Form/Form";
 import { useState } from "react";
 import { uid } from "uid";
+import useLocalStorageState from "use-local-storage-state";
 
 function App() {
-  const [colorCards, setColorCards] = useState(initialColors);
+  // const [colorCards, setColorCards] = useState(initialColors);
+  const [colorCards, setColorCards] = useLocalStorageState("storedCards", {
+    defaultValue: initialColors,
+  });
 
   function createColorCards(colors) {
     return colors.map((color) => (
@@ -45,6 +49,10 @@ function App() {
   return (
     <>
       <h1>Theme Creator</h1>
+      <button onClick={() => console.log("debugger button says: ")}>
+        {" "}
+        debugger{" "}
+      </button>
       <Form onSubmitColor={handleAddColorCard} buttonName="Add Color" />
 
       {colorCards.length === 0 ? (
