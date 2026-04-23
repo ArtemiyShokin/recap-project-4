@@ -33,7 +33,7 @@
   justify-content: center;
 }
 
-button {
+.form__button {
   font-family: monospace;
   font-weight: bold;
   font-size: 1.35rem;
@@ -47,7 +47,7 @@ button {
   transition: 0.25s ease-in-out;
 }
 
-button:hover {
+.form__button:hover {
   color: var(--greyscale-accent);
   background-color: whitesmoke;
 }
