@@ -36,20 +36,18 @@
 button {
   font-family: monospace;
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   color: var(--greyscale-dark);
   background-color: var(--greyscale-light);
   border-radius: 1px;
   border-color: var(--greyscale-light);
   box-shadow: 3px 3px var(--greyscale-dark);
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 20px;
-  padding-right: 20px;
+
+  padding: 5px 5px;
   transition: 0.25s ease-in-out;
 }
 
 button:hover {
-  color: black;
-  background-color: rgb(218, 148, 171);
+  color: var(--greyscale-accent);
+  background-color: whitesmoke;
 }
