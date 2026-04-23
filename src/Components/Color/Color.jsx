@@ -1,6 +1,8 @@
+import { useState } from "react";
 import "./Color.css";
 
 export default function Color({ color, onRemoveColorCard }) {
+  const [confirmationBoolean, setConfirmationBoolean] = useState(true);
   return (
     <div
       className="color-card__container"
@@ -18,14 +20,30 @@ export default function Color({ color, onRemoveColorCard }) {
           contrast: {color.contrastText}{" "}
         </li>
         <li>
+          {confirmationBoolean ? null : (
+            <p className="color-card__confirmation">ARE YOU SURE?</p>
+          )}
+
           <button
+            className="color-card__button"
             onClick={() => {
-              console.log("clicked id:", color.id);
-              onRemoveColorCard(color.id);
+              setConfirmationBoolean(!confirmationBoolean);
+              console.log(confirmationBoolean);
             }}
           >
-            delete me
+            {confirmationBoolean ? "delete me" : "cancel"}
           </button>
+          {confirmationBoolean ? null : (
+            <button
+              className="color-card__button"
+              onClick={() => {
+                console.log("clicked id:", color.id);
+                onRemoveColorCard(color.id);
+              }}
+            >
+              delete me irreversibly
+            </button>
+          )}
         </li>
       </ul>
     </div>

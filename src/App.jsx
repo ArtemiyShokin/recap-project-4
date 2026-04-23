@@ -30,6 +30,9 @@ function App() {
       <h1>Theme Creator</h1>
       <Form onAddColorCard={handleAddColorCard} />
       {createColorCards(colorCard)}
+      {colorCard.length === 0 ? (
+        <h2>you could try adding new cards here...</h2>
+      ) : null}
     </>
   );
 }

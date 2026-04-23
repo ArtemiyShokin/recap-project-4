@@ -47,7 +47,7 @@ export default function Form({ onAddColorCard }) {
           id="contrast"
           name="contrastText"
           placeholder="#GAGAGA"
-          defaultValue="#FFC5D3"
+          defaultValue="#960023"
         />
         {/* <div className="form__field">
           <input
@@ -60,7 +60,7 @@ export default function Form({ onAddColorCard }) {
           <input id="contrast" name="contrastText" type="color" />
         </div> */}
         <div className="form__button-wrapper">
-          <button> Add Color</button>
+          <button className="form__button"> Add Color</button>
         </div>
       </div>
     </form>
