@@ -1,16 +1,14 @@
 import ColorInput from "../ColorInput/ColorInput";
 import "./Form.css";
-export default function Form({ onAddColorCard }) {
+export default function Form({ onSubmitColor, buttonName }) {
   function handleSubmit(event) {
     event.preventDefault();
-    console.log("handle submit activated");
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
     console.log("data: ", data);
-    onAddColorCard(data);
-    //take the data from the forms
-    //create a new array and add it as an object
-    //add it as an argument to createColorCreation in App
+
+    onSubmitColor(data);
+    console.log(data);
   }
   return (
     <form onSubmit={handleSubmit} action="submit" className="form">
@@ -33,16 +31,7 @@ export default function Form({ onAddColorCard }) {
           placeholder="#GUGUGU"
           defaultValue="#FFC5D3"
         />
-        {/* <div className="form__field">
-          <input
-            id="hex"
-            name="hex"
-            type="text"
-            placeholder="#GGGGGG"
-            required
-          />
-          <input id="hex" name="hex" type="color" />
-        </div> */}
+
         <label htmlFor="contrast"> Contrast text</label>
         <ColorInput
           id="contrast"
@@ -50,18 +39,9 @@ export default function Form({ onAddColorCard }) {
           placeholder="#GAGAGA"
           defaultValue="#960023"
         />
-        {/* <div className="form__field">
-          <input
-            id="contrast"
-            name="contrastText"
-            type="text"
-            placeholder="#GGGGGG"
-            required
-          />
-          <input id="contrast" name="contrastText" type="color" />
-        </div> */}
+
         <div className="form__button-wrapper">
-          <button className="form__button"> Add Color</button>
+          <button className="form__button"> {buttonName}</button>
         </div>
       </div>
     </form>

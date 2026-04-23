@@ -14,6 +14,7 @@ function App() {
         key={color.id}
         color={color}
         onRemoveColorCard={handleRemoveColorCard}
+        onEditColorCard={handleEditColorCard}
       />
     ));
   }
@@ -25,10 +26,26 @@ function App() {
     setColorCards(colorCards.filter((card) => card.id !== incomingId));
   }
 
+  function handleEditColorCard(cardObject) {
+    // console.log("editColorCard triggered");
+    setColorCards(
+      colorCards.map((card) =>
+        card.id === cardObject.id
+          ? {
+              id: cardObject.id /* Olivia und Marco hatten hier einfach "...card"*/,
+              role: cardObject.role,
+              hex: cardObject.hex,
+              contrastText: cardObject.contrastText,
+            }
+          : card,
+      ),
+    );
+  }
+
   return (
     <>
       <h1>Theme Creator</h1>
-      <Form onAddColorCard={handleAddColorCard} />
+      <Form onSubmitColor={handleAddColorCard} buttonName="Add Color" />
 
       {colorCards.length === 0 ? (
         <h2>you could try adding new cards here...</h2>

@@ -7,7 +7,7 @@
 
   background-color: var(--greyscale-main);
 
-  box-shadow: 5px 5px var(--greyscale-accent);
+  /* box-shadow: 5px 5px var(--greyscale-accent); */
   max-width: 400px;
   margin: 10px;
   margin-left: 0px;
@@ -30,20 +30,20 @@
 }
 .form__button-wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: right;
 }
 
 .form__button {
-  font-family: monospace;
+  /* font-family: monospace; */
   font-weight: bold;
-  font-size: 1.35rem;
-  color: var(--greyscale-dark);
+  /* font-size: 1.35rem; */
+  color: hotpink;
   background-color: var(--greyscale-light);
-  border-radius: 1px;
+  /* border-radius: 1px; */
   border-color: var(--greyscale-light);
-  box-shadow: 3px 3px var(--greyscale-dark);
+  /* box-shadow: 3px 3px var(--greyscale-dark); */
 
-  padding: 5px 5px;
+  /* padding: 5px 5px; */
   transition: 0.25s ease-in-out;
 }
 
