@@ -3,6 +3,9 @@ import "./Color.css";
 
 export default function Color({ color, onRemoveColorCard }) {
   const [confirmationBoolean, setConfirmationBoolean] = useState(true);
+  function toggleConfirmation() {
+    setConfirmationBoolean(!confirmationBoolean);
+  }
   return (
     <div
       className="color-card__container"
@@ -21,16 +24,10 @@ export default function Color({ color, onRemoveColorCard }) {
         </li>
         <li>
           {confirmationBoolean ? null : (
-            <p className="color-card__confirmation">ARE YOU SURE?</p>
+            <p className="color-card__confirmation">are you sure?</p>
           )}
 
-          <button
-            className="color-card__button"
-            onClick={() => {
-              setConfirmationBoolean(!confirmationBoolean);
-              console.log(confirmationBoolean);
-            }}
-          >
+          <button className="color-card__button" onClick={toggleConfirmation}>
             {confirmationBoolean ? "delete me" : "cancel"}
           </button>
           {confirmationBoolean ? null : (

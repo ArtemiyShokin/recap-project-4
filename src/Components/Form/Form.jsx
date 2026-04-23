@@ -22,6 +22,7 @@ export default function Form({ onAddColorCard }) {
             name="role"
             type="text"
             placeholder="Kukareku"
+            defaultValue="superduper role"
             required
           />
         </div>

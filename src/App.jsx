@@ -6,7 +6,7 @@ import { useState } from "react";
 import { uid } from "uid";
 
 function App() {
-  const [colorCard, setColorCard] = useState(initialColors);
+  const [colorCards, setColorCards] = useState(initialColors);
 
   function createColorCards(colors) {
     return colors.map((color) => (
@@ -19,20 +19,22 @@ function App() {
   }
 
   function handleAddColorCard(newColorCard) {
-    setColorCard([{ id: uid(), ...newColorCard }, ...colorCard]);
+    setColorCards([{ id: uid(), ...newColorCard }, ...colorCards]);
   }
   function handleRemoveColorCard(incomingId) {
-    setColorCard(colorCard.filter((card) => card.id !== incomingId));
+    setColorCards(colorCards.filter((card) => card.id !== incomingId));
   }
 
   return (
     <>
       <h1>Theme Creator</h1>
       <Form onAddColorCard={handleAddColorCard} />
-      {createColorCards(colorCard)}
-      {colorCard.length === 0 ? (
+
+      {colorCards.length === 0 ? (
         <h2>you could try adding new cards here...</h2>
-      ) : null}
+      ) : (
+        createColorCards(colorCards)
+      )}
     </>
   );
 }
