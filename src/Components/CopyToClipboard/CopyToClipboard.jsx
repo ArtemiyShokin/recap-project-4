@@ -14,8 +14,7 @@ export default function CopyToClipboard({ color }) {
     /* warum muss es eine async sein??? */
     navigator.clipboard.writeText(color.hex);
     setCopyConfirmation(!copyConfirmation);
-    console.log(color.hex);
-    //introduce a three second timer
+
   }
 
   return (
