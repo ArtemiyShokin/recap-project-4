@@ -3,6 +3,7 @@ import "./Color.css";
 import "../Form/Form";
 import Form from "../Form/Form";
 import CopyToClipboard from "../CopyToClipboard/CopyToClipboard";
+import ContrastChecker from "../ContrastChecker/ContrastChecker";
 
 export default function Color({ color, onRemoveColorCard, onEditColorCard }) {
   const [confirmationBoolean, setConfirmationBoolean] = useState(true);
@@ -32,6 +33,10 @@ export default function Color({ color, onRemoveColorCard, onEditColorCard }) {
         >
           contrast: {color.contrastText}{" "}
         </li>
+        <ContrastChecker
+          colorHex={color.hex}
+          colorContrast={color.contrastText}
+        />
         {/* edit form: */}
         {editBoolean ? (
           <Form
