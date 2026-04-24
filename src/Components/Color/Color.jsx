@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./Color.css";
 import "../Form/Form";
 import Form from "../Form/Form";
+import CopyToClipboard from "../CopyToClipboard/CopyToClipboard";
 
 export default function Color({ color, onRemoveColorCard, onEditColorCard }) {
   const [confirmationBoolean, setConfirmationBoolean] = useState(true);
@@ -21,6 +22,7 @@ export default function Color({ color, onRemoveColorCard, onEditColorCard }) {
     >
       <ul className="color-card__list">
         <li className="color-card__hex-code"> {color.hex}</li>
+        <CopyToClipboard buttonName="copy button" color={color} />
         <li className="color-card__role" style={{ color: color.contrastText }}>
           {color.role}
         </li>
